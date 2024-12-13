@@ -1,0 +1,170 @@
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    font-family: 'NanumSquareRound', 'sans-serif';
+}
+body {
+    margin: 0;
+    font-family: 'NanumSquareRound', sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-section {
+    flex: 1;
+    background-color: #F4F7FD;
+    padding: 20px;
+    border-right: 2px solid #C4C4C4;
+}
+
+.right-section {
+    flex: 1;
+    background-color: #FFFFFF;
+    border-left: 2px solid #C4C4C4;
+    padding: 20px;
+    position: relative;
+}
+
+
+.meal-info {
+    margin-top: 20px;
+}
+
+.meal-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.meal-info p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.meal-entry {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.meal-entry img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.add-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #0d9bf1;
+    color: white;
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    /*margin-right: 70px;*/
+    /*margin-bottom: 70px;*/
+}
+
+.add-button:hover {
+    background-color: #3571FF;
+}
+
+.calories {
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.arrow {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.arrow.open {
+    transform: rotate(180deg);
+}
+
+.meal-content {
+    display: none; /* 기본적으로 숨김 */
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/**!*/
+/**/
+/**/
+
+/*.left-section {*/
+/*    flex: 1;*/
+/*    background-color: #F4F7FD;*/
+/*    padding: 20px;*/
+/*    border-right: 2px solid #C4C4C4;*/
+/*}*/
+
+/*.right-section {*/
+/*    flex: 1;*/
+/*    background-color: #FFFFFF;*/
+/*    border-left: 2px solid #C4C4C4;*/
+/*    padding: 20px;*/
+/*    position: relative;*/
+/*}*/
+
+/*.meal-info {*/
+/*    margin-top: 20px;*/
+/*}*/
+
+/*.meal-entry {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    margin-bottom: 10px;*/
+/*    cursor: pointer;*/
+/*    position: relative;*/
+/*}*/
+
+/*.meal-entry img {*/
+/*    width: 24px;*/
+/*    height: 24px;*/
+/*    margin-right: 10px;*/
+/*}*/
+
+/*.calories {*/
+/*    font-weight: bold;*/
+/*    margin-left: auto;*/
+/*    margin-right: 10px;*/
+/*}*/
+
+/*.arrow {*/
+/*    width: 20px;*/
+/*    height: 20px;*/
+/*    transition: transform 0.3s ease;*/
+/*}*/
+
+/*.arrow.open {*/
+/*    transform: rotate(180deg);*/
+/*}*/
+
+/*.meal-content {*/
+/*    display: none; !* 기본적으로 숨김 *!*/
+/*    margin-top: 10px;*/
+/*    width: 100%;*/
+/*    padding: 10px;*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 5px;*/
+/*}*/

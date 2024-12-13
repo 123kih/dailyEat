@@ -1,0 +1,156 @@
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 전체 페이지 스타일 */
+
+* {
+    font-family: 'NanumSquareRound','sans-serif';
+}
+body {
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 컨테이너 스타일 */
+.container {
+    max-width: 800px;
+    margin: 60px auto;
+    margin-bottom: 0;
+    padding: 20px 40px !important;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* 제목 스타일 */
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+/* 폼 스타일 */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 입력창 및 텍스트 영역 스타일 */
+input[type="text"],
+textarea,
+input[type="file"] {
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+input[type="text"],
+textarea,
+input[type="file"]:focus{
+    outline: none;
+}
+
+/* 제목 영역 스타일 */
+.title-area {
+    width: 100%;
+    font-size: 32px;
+}
+
+/* 텍스트 영역 스타일
+ */
+textarea {
+    width: 100%;
+    height: 500px;
+    resize: none !important;
+}
+
+
+.title-area, .content {
+    border-bottom: 1px solid #ddd !important;
+    padding: 10px;
+}
+
+.file-upload {
+    margin: 10px 0 !important;
+}
+
+/* 버튼 컨테이너 스타일 */
+.button-container {
+    display: flex;
+    flex-direction:row-reverse;
+    gap: 10px; /* 버튼 사이의 간격 */
+    margin-top: 20px;
+}
+
+/* 버튼 스타일 */
+.submit, .reset, .list {
+    padding: 5px 10px; /* 버튼의 크기를 작게 조정 */
+    font-size: 14px; /* 글자 크기 조정 */
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: auto; /* 버튼 폭을 내용에 맞게 조정 */
+    min-width: 80px; /* 버튼 최소 폭 설정 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+.submit:hover {
+    background-color: #0166d3;
+}
+
+.reset {
+    background-color: #80858a;
+}
+
+.reset:hover {
+    background-color: #5a6268;
+}
+
+.list {
+    background-color: #52b4d7;
+}
+
+.list:hover {
+    background-color: #479fc2;
+}
+
+
+
+
+/* 미디어쿼리 - 작은 화면에서 폼이 잘 보이도록 */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    input[type="text"],
+    textarea,
+    input[type="password"],
+    input[type="file"] {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 10px; /* 버튼 사이의 여백 조정 */
+        padding: 8px 12px; /* 모바일에서 버튼 크기 조정 */
+    }
+
+    button:last-child {
+        margin-bottom: 0;
+    }
+}

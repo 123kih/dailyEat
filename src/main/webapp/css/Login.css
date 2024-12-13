@@ -1,0 +1,163 @@
+/*폰트 */
+
+@font-face {
+    font-family: 'MaplestoryOTFBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/*폰트
+/* 기본 스타일 설정 */
+body {
+    font-family:'NanumSquareRound' ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f9f9f9;
+
+}
+
+/* 컨테이너 스타일 설정 */
+.container {
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin: auto;
+    font-family:'NanumSquareRound';
+}
+
+/* 로고 스타일 설정 */
+.logo img {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+/* 제목 스타일 설정 */
+h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+/* 문단 스타일 설정 */
+p {
+    font-size: 0.8em;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* 구분선 스타일 설정 */
+.divider {
+    border: none;
+    border-top: 2px solid #ddd;
+    margin: 20px 0;
+}
+
+/* 폼 스타일 설정 */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 라벨 스타일 설정 */
+label {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* 인풋 스타일 설정 */
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1em;
+}
+
+/* 버튼 스타일 설정 */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #0d9bf1;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0b8be0;
+}
+
+/* 링크 섹션 스타일 설정 */
+.links, .signup {
+    margin-top: 20px;
+}
+
+/* 링크 스타일 설정 */
+.links a, .signup a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.links a:hover, .signup a:hover {
+    text-decoration: underline;
+}
+
+/* 푸터 스타일 설정 */
+footer {
+    margin-top: auto;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    font-family: 'MaplestoryOTFBold';
+}
+
+/* 반응형 웹을 위한 미디어 쿼리 */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 15px;
+    }
+
+    input {
+        padding: 12px;
+    }
+
+    footer {
+        font-size: 1em;
+        padding: 15px 0;
+    }
+}

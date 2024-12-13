@@ -1,0 +1,207 @@
+/*폰트패밀리*/
+@font-face {
+    font-family: 'MaplestoryOTFBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/* 기본 스타일 초기화 */
+body, h1, h2, p, ul, li, header, nav, main, section, footer, div, span, textarea, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'NanumSquareRound';
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.section-divider {
+    border: none;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 20px 0;
+}
+
+.content-divider {
+    border: none;
+    height: 1px;
+    background-color: #ccc;
+    margin: 10px 0;
+}
+
+main {
+    margin-top: 50px;
+    flex: 1;
+}
+
+.post .comments {
+    margin: 10px;
+    padding: 10px 0;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.post-content h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+/* 게시글 상세보기 스타일 */
+.post-detail {
+    margin-bottom: 20px;
+}
+
+.post-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    font-size: 0.8em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.post-info .info-item {
+    flex: 1;
+    min-width: 100px; /* 항목 간격을 줄임 */
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.post-info .label {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.post-title, .post-content {
+    display: flex;
+}
+
+.post-title .label, .post-content .label {
+    width: 10%;
+    font-weight: bold;
+}
+
+.post-title .value, .post-content .content {
+    width: 90%;
+}
+
+.post-actions {
+    text-align: center;
+}
+
+.post-actions button {
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* 댓글 입력 섹션 스타일 */
+.comment-section {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.comment-section textarea {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+.comment-btn-wrapper {
+    display: flex;
+    justify-content: flex-end; /* 버튼을 오른쪽으로 정렬 */
+
+}
+
+.comment-btn {
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background-color: #007BFF;
+    color: white; /* 흰색 텍스트 */
+    border: none; /* 테두리 없음 */
+    border-radius: 4px; /* 모서리 둥글게 */
+    padding: 6px 12px; /* 패딩 */
+    font-size: 14px; /* 글자 크기 */
+    cursor: pointer; /* 커서 포인터로 변경 */
+    transition: background-color 0.3s ease; /* 배경색 변화에 부드러운 전환 효과 추가 */
+}
+
+/* 버튼에 마우스를 올렸을 때 */
+.delete-btn:hover {
+    background-color: #1b70cb;
+}
+
+
+
+
+
+/* 댓글 목록 스타일 */
+.comments .comment {
+    border-top: 1px solid #e0e0e0;
+    padding: 10px 0;
+}
+
+.comments .comment .author {
+    font-weight: bold;
+}
+
+.comments .comment .time {
+    color: #777;
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: white;
+    font-weight: bold;
+    font-family: 'MaplestoryOTFBold';
+}
+
+.footer-divider {
+    border: none;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin-bottom: 10px;
+}

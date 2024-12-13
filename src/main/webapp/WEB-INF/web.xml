@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+    <context-param>
+        <param-name>INIT_PARAM</param-name>
+        <param-value>web.xml의 초기화 매개변수</param-value>
+    </context-param>
+    <!--세션 유지시간 설정 분단위-->
+    <session-config>
+        <session-timeout>20</session-timeout>
+    </session-config>
+
+    <!-- 한 페이지에 출력할 게시물의 개수 -->
+    <context-param>
+        <param-name>POSTS_PER_PAGE</param-name>
+        <param-value>10</param-value>
+    </context-param>
+
+    <!-- 한 화면 블록에 출력할 페이지 번호의 개수 -->
+    <context-param>
+        <param-name>PAGES_PER_BLOCK</param-name>
+        <param-value>5</param-value>
+    </context-param>
+
+    <resource-ref>
+        <description>Database Connection Pool</description>
+        <res-ref-name>dbcp_myoracle</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+
+
+    <!--    servlet 기본 형식-->
+    <!--    1. 서블릿 등록-->
+    <!--    <servlet>-->
+    <!--        <servlet-name>서블릿명</servlet-name>-->
+    <!--        <servlet-class>패키지를 포함한 서블릿 클래스 명</servlet-class>-->
+    <!--    </servlet>-->
+    <!--    2. 서블릿과 요청명을 매핑-->
+    <!--    <servlet-mapping>-->
+    <!--        <servlet-name>서블릿 명</servlet-name>-->
+    <!--        <url-pattern>요청 URL</url-pattern>-->
+    <!--    </servlet-mapping>-->
+<!--    <servlet>-->
+<!--        <servlet-name>HelloServlet</servlet-name>-->
+<!--        <servlet-class>com.project.dailyeat.HelloServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>HelloServlet</servlet-name>-->
+<!--        <url-pattern>/12/HelloServlet.do</url-pattern>-->
+<!--    </servlet-mapping>-->
+<!--    <servlet>-->
+<!--        <servlet-name>DirectServletPrint</servlet-name>-->
+<!--        <servlet-class>com.example.servlet.DirectServletPrint</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>DirectServletPrint</servlet-name>-->
+<!--        <url-pattern>/12/DirectServletPrint.do</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    <servlet>-->
+<!--        <servlet-name>MemberAuth</servlet-name>-->
+<!--        <servlet-class>com.example.servlet.MemberAuth</servlet-class>-->
+<!--        <init-param>-->
+<!--            <param-name>admin_id</param-name>-->
+<!--            <param-value>admin</param-value>-->
+<!--        </init-param>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>MemberAuth</servlet-name>-->
+<!--        <url-pattern>/12/MemberAuth.mvc</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+    <!--    한글 인코딩용 파일/tomcat 9 버전 사용시 필요함-->
+    <!--    <filter>-->
+    <!--        <filter-name>SetCharEncoding</filter-name>-->
+    <!--        <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>-->
+    <!--        <init-param>-->
+    <!--            <param-name>encoding</param-name>-->
+    <!--            <param-value>utf-8</param-value>-->
+    <!--        </init-param>-->
+    <!--    </filter>-->
+    <!--    <filter-mapping>-->
+    <!--        <filter-name>SetCharEncoding</filter-name>-->
+    <!--        <url-pattern>/*</url-pattern>-->
+    <!--    </filter-mapping>-->
+
+
+    <!--    <error-page>-->
+    <!--        <error-code>404</error-code>-->
+    <!--        <location>/02/Exception.jsp</location>-->
+    <!--    </error-page>-->
+    <!--    <error-page>-->
+    <!--        <error-code>405</error-code>-->
+    <!--        <location>/02/Exception.jsp</location>-->
+    <!--    </error-page>-->
+    <!--    <error-page>-->
+    <!--        <error-code>500</error-code>-->
+    <!--        <location>/02/Exception.jsp</location>-->
+    <!--    </error-page>-->
+
+    <!--Oracle JDBC 설정용-->
+    <context-param>
+        <param-name>OracleDriver</param-name>
+        <param-value>oracle.jdbc.OracleDriver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>OracleURL</param-name>
+        <param-value>jdbc:oracle:thin:@10.100.103.31:1521:xe</param-value>
+    </context-param>
+    <context-param>
+        <param-name>OracleId</param-name>
+        <param-value>project</param-value>
+    </context-param>
+    <context-param>
+        <param-name>OraclePwd</param-name>
+        <param-value>oracle</param-value>
+    </context-param>
+
+</web-app>

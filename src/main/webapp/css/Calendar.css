@@ -1,0 +1,405 @@
+@font-face {
+    font-family: 'MaplestoryOTFBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    font-family:'NanumSquareRound' ;
+}
+
+body {
+    position: relative; /* 자식 요소의 절대 위치를 기준으로 설정 */
+    display: flex;
+    flex-direction: column; /* 세로 방향 레이아웃 */
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+
+#container{
+    margin-top: 100px;
+}
+
+
+
+.info{
+    margin: 50px;
+}
+
+.calendar {
+    width: 600px;
+    margin: 50px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.year-month {
+    font-size: 35px;
+}
+
+.nav {
+    display: flex;
+    border: 1px solid #333333;
+    border-radius: 5px;
+}
+
+.nav-btn {
+    width: 28px;
+    height: 30px;
+    border: none;
+    font-size: 16px;
+    line-height: 34px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.go-today {
+    width: 75px;
+    border-left: 1px solid #333333;
+    border-right: 1px solid #333333;
+}
+
+.days {
+    display: flex;
+    margin: 25px 0 10px;
+}
+
+.day {
+    width: calc(100% / 7);
+    text-align: center;
+}
+
+.dates {
+    display: flex;
+    flex-flow: row wrap;
+    height: 500px;
+    border-top: 1px solid #333333;
+    border-right: 1px solid #333333;
+}
+
+.date {
+    cursor: pointer;
+    width: calc(100% / 7);
+    padding: 15px;
+    text-align: right;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #333333;
+}
+
+.date:hover {
+    background-color: #d5ecf8;
+}
+
+.day:nth-child(7n + 1),
+.date:nth-child(7n + 1) {
+    color: #D13E3E;
+}
+
+.day:nth-child(7n),
+.date:nth-child(7n) {
+    color: #396EE2;
+}
+
+.today {
+    position: relative;
+    color: #FFFFFF;
+}
+
+.today::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: lightblue;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+}
+
+.date span.this {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px;
+}
+
+.date span.selected {
+    color: #FFFFFF;
+}
+
+
+.date span.selected::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: skyblue;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+}
+
+.date span.today::before {
+    background-color: lightblue;
+}
+
+.other {
+    opacity: 0.3;
+}
+
+
+/* 미디어쿼리 */
+
+/* 모바일 화면 (최대 600px) */
+@media (max-width: 600px) {
+    .calendar {
+        width: 100%;
+        margin: 20px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .year-month {
+        font-size: 24px;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: center; /* 버튼들이 중앙 정렬되도록 설정 */
+        align-items: center; /* 버튼들이 수직으로 중앙 정렬되도록 설정 */
+        border: 1px solid #333333;
+        border-radius: 5px;
+        background-color: #ffffff;
+    }
+
+    .nav-btn {
+        display: inline-flex; /* 버튼의 크기를 텍스트에 맞게 조정 */
+        align-items: center; /* 버튼 내부의 텍스트를 수직 중앙에 배치 */
+        justify-content: center; /* 버튼 내부의 텍스트를 수평 중앙에 배치 */
+        padding: 0 10px; /* 좌우 여백을 추가 */
+        height: 40px; /* 버튼의 높이 */
+        border: none;
+        font-size: 16px;
+        background-color: transparent;
+        cursor: pointer;
+        text-align: center; /* 버튼 텍스트 중앙 정렬 */
+        white-space: nowrap; /* 버튼의 텍스트가 줄 바꿈 없이 유지되도록 설정 */
+    }
+
+    .go-prev,
+    .go-next {
+        /* 이전, 다음 버튼의 너비를 글자에 맞게 조정 */
+        width: auto;
+    }
+
+    .go-today {
+        /* Today 버튼의 너비를 텍스트에 맞게 조정 */
+        width: auto;
+        border-left: 1px solid #333333; /* Today 버튼과 이전 버튼 사이의 구분선 */
+        border-right: 1px solid #333333; /* Today 버튼과 다음 버튼 사이의 구분선 */
+    }
+
+    .days {
+        flex-wrap: wrap;
+        margin: 15px 0 5px;
+    }
+
+    .day {
+        width: calc(100% / 7);
+        padding: 5px;
+    }
+
+    .dates {
+        height: auto;
+    }
+
+    .date {
+        padding: 10px;
+        width: calc(100% / 7);
+    }
+}
+
+/* 태블릿 화면 (최대 900px) */
+@media (max-width: 900px) {
+    .calendar {
+        width: 90%;
+        margin: 30px;
+    }
+
+    .header {
+        flex-direction: row;
+    }
+
+    .year-month {
+        font-size: 28px;
+    }
+
+    .nav {
+        flex-direction: row;
+    }
+
+    .nav-btn {
+        width: 30px;
+        height: 35px;
+        font-size: 14px;
+        line-height: 35px;
+    }
+
+    .days {
+        margin: 20px 0 10px;
+    }
+
+    .day {
+        width: calc(100% / 7);
+    }
+
+    .dates {
+        height: auto;
+    }
+
+    .date {
+        padding: 12px;
+    }
+}
+
+/* 데스크탑 화면 (최소 1200px) */
+@media (min-width: 1200px) {
+    .calendar {
+        width: 600px;
+        margin: 50px;
+    }
+
+    .header {
+        flex-direction: row;
+    }
+
+    .year-month {
+        font-size: 35px;
+    }
+
+    .nav {
+        flex-direction: row;
+    }
+
+    .nav-btn {
+        width: 28px;
+        height: 30px;
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    .days {
+        margin: 25px 0 10px;
+    }
+
+    .day {
+        width: calc(100% / 7);
+    }
+
+    .dates {
+        height: 500px;
+    }
+
+    .date {
+        padding: 15px;
+    }
+}
+
+/*모달창*/
+.modal {
+    display: none; /* 기본적으로 숨겨두기 */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* 흐린 배경 */
+}
+
+/* Modal Content */
+.modal-content {
+    position: fixed; /* 모달 창이 화면의 중앙에 위치하도록 설정 */
+    top: 50%; /* 수직 중앙 */
+    left: 50%; /* 수평 중앙 */
+    transform: translate(-50%, -50%); /* 모달 콘텐츠를 정확히 중앙에 위치시키기 위한 변환 */
+    width: 80%; /* 모달 창의 너비 (화면의 80%) */
+    max-width: 1350px; !important;/* 최대 너비 설정 */
+    height: 80%; /* 모달 창의 높이 (화면의 80%) */
+    max-height: 1000px; /* 최대 높이 설정 */
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden; /* 콘텐츠가 모달을 넘지 않도록 숨기기 */
+}
+
+/* Modal Iframe */
+.modal-content iframe {
+    width: 100%; /* iframe이 모달 콘텐츠의 너비를 가득 채우도록 설정 */
+    height: 100%; /* iframe이 모달 콘텐츠의 높이를 가득 채우도록 설정 */
+    border: none; /* iframe의 기본 테두리 제거 */
+}
+
+/* 닫기 버튼  */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/*뒤로가기버튼*/
+.back-btn {
+    color: #aaa;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+}
+
+/*!* 배경 흐리게 처리 *!*/
+/*body.modal-open {*/
+/*    overflow: hidden; !* 스크롤을 막음 *!*/
+/*}*/
+
+/*달력 눌렀을때*/
+
+
+
